@@ -10,6 +10,7 @@
     "serve": "http-server examples/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "respository": "https://github.com/msecret/performance_metrics",
   "author": "Marco Segreto",
   "license": "ISC",
   "devDependencies": {
