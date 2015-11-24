@@ -3,12 +3,12 @@
 
   function accurateMeasurement() {
     setTimeout(function() {
-      win.performance.measure('navigationStart', 'loadEventEnd');
-      var measure = window.performance.getEntriesByName('navigationStart');
+      win.performance.measure('onload', 'navigationStart', 'loadEventEnd');
+      var measure = win.performance.getEntriesByName('onload');
       console.log('onload', measure[0]);
     }, 0);
   }
-  window.addEventListener('load', accurateMeasurement);
+  win.addEventListener('load', accurateMeasurement);
 
   var onLoadStart = new Date().getTime();
   function crossBrowserMeasurement() {
@@ -18,6 +18,6 @@
       console.log("onload " + latency);
     }, 0);
   }
-  window.addEventListener('load', crossBrowserMeasurement);
+  win.addEventListener('load', crossBrowserMeasurement);
 
 })(window);
