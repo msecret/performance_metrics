@@ -8,12 +8,15 @@
   },
   "scripts": {
     "serve": "http-server examples/",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "perf": "sitespeed.io -u http://localhost:8080 -b chrome --connection mobile3gfast,native -n 3 --storeJson --tap --noYslow",
+    "time": "browsertime -u http://localhost:8080 -n 3 -b chrome -w 1000x1200 --filename sitespeed.json --connection mobile3gfast"
   },
   "respository": "https://github.com/msecret/performance_metrics",
   "author": "Marco Segreto",
   "license": "ISC",
   "devDependencies": {
+    "browsertime": "git@github.com:msecret/browsertime.git#master",
     "http-server": "^0.8.5"
   }
 }
