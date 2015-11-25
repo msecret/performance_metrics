@@ -9,7 +9,6 @@
           i = 0,
           ilen;
 
-      console.log('resources', resources);
       for (ilen = resources.length; i < ilen; i++) {
         durations.push(resources[i].duration);   
       }
