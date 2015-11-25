@@ -63,6 +63,7 @@
 ================================================== -->
 
   <script type="text/javascript" src="./backend.js"></script>
+  <script type="text/javascript" src="./custom.js"></script>
   <script type="text/javascript" src="./onload.js"></script>
   <script type="text/javascript" src="./rendering.js"></script>
   <script type="text/javascript" src="./resources.js"></script>
@@ -126,7 +127,8 @@
     </div>
     <div class="usa-width-one-half">
       <div class="usa-img-secondary">
-        <img src="./assets/img/home/homepage_illustrations_visual_style_guide_2x.png" alt="Visual Style Guide">
+        <img src="./assets/img/home/homepage_illustrations_visual_style_guide_2x.png" alt="Visual Style Guide"
+          class="primaryImage">
       </div>
       <h3>
         <a href="/designstandards/visual-style/">Visual Style Guide</a>
@@ -139,6 +141,11 @@
 >View the standards</a>
   </div>
 </section>
+
+<script type="text/javascript">
+  // Custom metric "primary callout"
+  window.trackCustom('primaryCallout', '.primaryImage');
+</script>
 
 <section class="usa-section">
   <div class="usa-grid">

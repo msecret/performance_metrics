@@ -13,6 +13,8 @@
         durations.push(resources[i].duration);   
       }
 
+      // TODO don't get the max duration, get the event with the max duration
+      // and use performance.measure for that.
       duration = Math.max.apply(null, durations);
 
       // TODO figure out what to put this in window.performance entries.
