@@ -35,6 +35,7 @@ function findMaxDuration(entries) {
 
 (function(win) {
 
+  // TODO what about background image? Can that work?
   win.trackCustom = function(name, imagesSelector) {
     win.performance.mark(name + '-mark');
     win.addEventListener('load', function() {
@@ -52,7 +53,6 @@ function findMaxDuration(entries) {
           }
         }
       }
-      console.log('entries', resourceEntries);
       var max = findMaxDuration([resourceEntry].concat(resourceEntries));
 
       win.performance.measure(name, 'navigationStart', max.name);
