@@ -5,7 +5,16 @@ function convertMarkToResource(mark) {
     entryType: 'resource',
     initiatorType: 'DOM',
     name: mark.name
-  }
+  };
+}
+
+function convertOtherToResource(other) {
+  return {
+    duration: other.responseEnd,
+    entryType: other.entryType,
+    initiatorType: other.initiatorType,
+    name: other.name
+  };
 }
 
 function findMaxDuration(entries) {
@@ -39,10 +48,11 @@ function findMaxDuration(entries) {
       for (var i = 0, ilen = images.length; i < ilen; i++) {
         for (var j = 0, jlen = resources.length; j < jlen; j++) {
           if (images[i].currentSrc === resources[j].name) {
-            resourceEntries.push(resources[j]);
+            resourceEntries.push(convertOtherToResource(resources[j]));
           }
         }
       }
+      console.log('entries', resourceEntries);
       var max = findMaxDuration([resourceEntry].concat(resourceEntries));
 
       win.performance.measure(name, 'navigationStart', max.name);
